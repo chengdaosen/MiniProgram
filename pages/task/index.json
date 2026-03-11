@@ -1,6 +1,6 @@
 {
+  "defaultTitle": "任务",
   "usingComponents": {
-    "am-button": "antd-mini/es/Button/index",
     "custom-tabbar": "/components/custom-tabbar/index"
   }
 }

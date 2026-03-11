@@ -1,6 +1,8 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/task/index",
+    "pages/message/index"
   ],
   "lazyCodeLoading": "renderedComponents",
   "window": {

@@ -1,5 +1,14 @@
 {
   "devDependencies": {
-    "@mini-types/alipay": "^3"
+    "@mini-types/alipay": "^3",
+    "@typescript-eslint/eslint-plugin": "^8.57.0",
+    "@typescript-eslint/parser": "^8.57.0",
+    "eslint": "^10.0.3",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.8.1",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "antd-mini": "^3.4.3"
   }
 }

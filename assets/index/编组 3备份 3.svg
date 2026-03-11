@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="144px" height="144px" viewBox="0 0 144 144" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+    <title>编组 3备份 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-29.0%" y="-450.0%" width="158.1%" height="1000.0%" filterUnits="objectBoundingBox" id="filter-1">
+            <feGaussianBlur stdDeviation="9" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <linearGradient x1="50%" y1="16.9945126%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#FFB905" offset="0%"></stop>
+            <stop stop-color="#FB4400" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#FDE543" offset="0%"></stop>
+            <stop stop-color="#FFC013" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-4" points="48 45 64.0116788 45 72.0350365 63.3437926 79.9532847 45 96 45 83.7722628 68.2796726 94.1781022 68.2796726 94.1781022 76.420191 79.4277372 76.420191 79.4277372 80.8772169 94.1781022 80.8772169 94.1781022 89.1282401 79.4277372 89.1282401 79.4277372 99 64.8525547 99 64.8525547 89.1282401 49.8569343 89.1282401 49.8569343 80.8772169 64.8525547 80.8772169 64.8525547 76.420191 49.8569343 76.420191 49.8569343 68.2796726 60.5781022 68.2796726"></polygon>
+        <filter x="-81.2%" y="-61.1%" width="262.5%" height="244.4%" filterUnits="objectBoundingBox" id="filter-5">
+            <feOffset dx="0" dy="6" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="12" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.66236413   0 0 0 0 0.288445394   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="2期下" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.2">
+        <g id="二期下/首页/未签到" transform="translate(-20.000000, -652.000000)">
+            <g id="bg" transform="translate(0.000000, 128.000000)">
+                <g id="蒙版">
+                    <g id="编组-3备份-3" transform="translate(20.000000, 524.000000)">
+                        <path d="M73.5,137.994704 C104.317489,137.994704 120,138.203659 120,135.99647 C120,133.78928 104.317489,132 73.5,132 C42.682511,132 27,133.78928 27,135.99647 C27,138.203659 42.682511,137.994704 73.5,137.994704 Z" id="椭圆形" fill="#D47500" filter="url(#filter-1)"></path>
+                        <g id="编组-7备份-2">
+                            <circle id="椭圆形" stroke="url(#linearGradient-3)" stroke-width="18" fill="url(#linearGradient-2)" cx="72" cy="72" r="63"></circle>
+                            <g id="¥" fill-rule="nonzero">
+                                <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-4"></use>
+                                <use fill="#FFF08D" xlink:href="#path-4"></use>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

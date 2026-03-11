@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="26px" viewBox="0 0 16 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+    <title>Disclosure Indicator</title>
+    <desc>Created with Sketch.</desc>
+    <g id="2期下" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="二期下/首页/未签到" transform="translate(-435.000000, -2276.000000)" fill="#999999">
+            <path d="M438.098557,2277.02009 C437.491841,2276.45671 436.526028,2276.47397 435.941436,2277.05856 L436.058564,2276.94144 C435.473935,2277.52606 435.4795,2278.45865 436.081892,2279.03485 L446.5,2289 L436.081892,2298.96515 C435.48438,2299.53668 435.473972,2300.47397 436.058564,2301.05856 L435.941436,2300.94144 C436.526065,2301.52606 437.498267,2301.53732 438.098557,2300.97991 L450.267011,2289.68063 C450.67183,2289.30473 450.667739,2288.69147 450.267011,2288.31937 L438.098557,2277.02009 Z" id="Disclosure-Indicator"></path>
+        </g>
+    </g>
+</svg>

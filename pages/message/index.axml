@@ -1,0 +1,5 @@
+<view class="page">
+  <view class="title">消息</view>
+  <view class="desc">这里是消息页面。</view>
+</view>
+<custom-tabbar currentTab="message" />

@@ -3,4 +3,8 @@
   <view>Hello Mini Program</view>
   <view>This is a blank page.</view>
   <view>Current SDKVersion is {{SDKVersion}}.</view>
+  <view class="demo-action">
+    <am-button type="primary">antd-mini 按钮</am-button>
+  </view>
 </view>
+<custom-tabbar currentTab="index" />
