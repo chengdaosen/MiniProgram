@@ -1,0 +1,6 @@
+
+<view class="blank-page">
+  <view>Hello Mini Program</view>
+  <view>This is a blank page.</view>
+  <view>Current SDKVersion is {{SDKVersion}}.</view>
+</view>
