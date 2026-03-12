@@ -1,13 +1,21 @@
 <view class="custom-tabbar">
-  <view class="tab-item" data-tab="index" onTap="onTabTap">
+  <view
+    class="tab-item"
+    data-tab="index"
+    onTap="onTabTap"
+  >
     <image
       class="tab-icon"
       src="{{currentTab === 'index' ? '/assets/tabbar/mall-active.svg' : '/assets/tabbar/mall.svg'}}"
       mode="aspectFit"
     />
-    <text class="tab-text {{currentTab === 'index' ? 'tab-text-active' : ''}}">租币商城</text>
+    <text class="tab-text {{currentTab === 'index' ? 'tab-text-active' : ''}}">运动步数</text>
   </view>
-  <view class="tab-item" data-tab="task" onTap="onTabTap">
+  <view
+    class="tab-item"
+    data-tab="task"
+    onTap="onTabTap"
+  >
     <image
       class="tab-icon"
       src="{{currentTab === 'task' ? '/assets/tabbar/task-active.svg' : '/assets/tabbar/task.svg'}}"
@@ -15,7 +23,11 @@
     />
     <text class="tab-text {{currentTab === 'task' ? 'tab-text-active' : ''}}">任务</text>
   </view>
-  <view class="tab-item" data-tab="message" onTap="onTabTap">
+  <view
+    class="tab-item"
+    data-tab="message"
+    onTap="onTabTap"
+  >
     <image
       class="tab-icon"
       src="{{currentTab === 'message' ? '/assets/tabbar/message-active.svg' : '/assets/tabbar/message.svg'}}"

@@ -1,10 +1,184 @@
+<scroll-view
+  class="index-page"
+  scroll-y
+>
+  <view class="hero-section">
+    <image
+      class="hero-bg"
+      src="/assets/index/bg.svg"
+      mode="widthFix"
+    />
 
-<view class="blank-page">
-  <view>Hello Mini Program</view>
-  <view>This is a blank page.</view>
-  <view>Current SDKVersion is {{SDKVersion}}.</view>
-  <view class="demo-action">
-    <am-button type="primary">antd-mini 按钮</am-button>
+    <view class="hero-side hero-side-left">
+      <view
+        class="side-item"
+        onTap="goMessage"
+      >
+        <image
+          class="side-icon"
+          src="/assets/index/message.svg"
+          mode="aspectFit"
+        />
+        <view class="side-badge">2</view>
+        <!-- <text class="side-text">消息</text> -->
+      </view>
+      <view class="side-item">
+        <image
+          class="side-icon"
+          src="/assets/index/rules.svg"
+          mode="aspectFit"
+        />
+        <!-- <text class="side-text">规则</text> -->
+      </view>
+    </view>
+
+    <view class="hero-side hero-side-right">
+      <view class="right-balance">
+        <image
+          class="right-balance-icon"
+          src="/assets/index/zu-coins.svg"
+          mode="aspectFit"
+        />
+        <text class="right-balance-text">32</text>
+      </view>
+      <view
+        class="right-message"
+        onTap="handleSignToggle"
+      >
+        <image
+          class="right-message-icon"
+          src="/assets/index/signin.svg"
+          mode="aspectFit"
+        />
+        <text class="right-message-text">{{signedIn ? "已签到" : "未签到"}}</text>
+        <image
+          a:if="{{!signedIn}}"
+          class="right-message-dot"
+          src="/assets/index/red-dot.svg"
+          mode="aspectFit"
+        />
+      </view>
+    </view>
+
+    <view class="hero-content">
+      <view class="hero-bubbles">
+        <view class="bubble-item bubble-item-1">
+          <text class="bubble-label">支付成功</text>
+          <view class="bubble bubble-green">+2</view>
+        </view>
+        <view class="bubble-item bubble-item-2">
+          <text class="bubble-label">支付成功</text>
+          <view class="bubble bubble-green">+2</view>
+        </view>
+        <view class="bubble-item bubble-item-3">
+          <text class="bubble-label">运动步数</text>
+          <view class="bubble bubble-green">+2</view>
+        </view>
+        <view class="bubble-item bubble-item-4">
+          <text class="bubble-label">新人专享</text>
+          <view class="bubble bubble-special">
+            <image
+              class="bubble-special-bg"
+              src="/assets/index/yellow-energy.svg"
+              mode="aspectFit"
+            />
+            <text class="bubble-special-value">+2</text>
+          </view>
+        </view>
+        <view class="bubble-item bubble-item-5">
+          <text class="bubble-label">运动步数</text>
+          <view class="bubble bubble-green">+2</view>
+        </view>
+      </view>
+
+      <view class="hero-steps-card">
+        <text class="steps-label">今日步数</text>
+        <text class="steps-value">2748</text>
+        <text class="steps-tip">每日24:00自动清零</text>
+      </view>
+
+      <view class="hero-people">
+        <image
+          class="hero-person hero-person-left"
+          src="/assets/index/boy@2x.png"
+          mode="aspectFit"
+        />
+        <image
+          class="hero-person hero-person-right"
+          src="/assets/index/girl@2x.png"
+          mode="aspectFit"
+        />
+      </view>
+
+      <view class="hero-btn">瓜分888现金</view>
+    </view>
   </view>
-</view>
+
+  <view class="main-panel">
+    <view class="section section-service">
+      <view class="section-title">租币当钱花</view>
+      <scroll-view
+        class="service-scroll"
+        scroll-x
+      >
+        <view class="service-list">
+          <view
+            class="service-item"
+            a:for="{{serviceList}}"
+            a:for-item="item"
+            a:for-index="index"
+            a:key="index"
+          >
+            <image
+              class="service-icon"
+              src="{{item.icon}}"
+              mode="scaleToFill"
+            />
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+
+    <view class="section section-goods">
+      <view class="section-title">租物推荐</view>
+      <view class="goods-list">
+        <view
+          class="goods-item"
+          a:for="{{goodsList}}"
+          a:for-item="item"
+          a:for-index="index"
+          a:key="index"
+        >
+          <image
+            class="goods-image"
+            src="{{item.image}}"
+            mode="aspectFill"
+          />
+          <text class="goods-title">{{item.title}}</text>
+          <view class="goods-meta">
+            <text class="goods-tag">{{item.tag}}</text>
+            <view class="goods-price-row">
+              <view class="goods-price">
+                <text class="goods-price-small">￥</text>
+                <text class="goods-price-int">{{item.priceInt}}</text>
+                <text class="goods-price-small">{{item.priceDecimal}}</text>
+                <text class="goods-price-small">/天</text>
+              </view>
+              <text class="goods-cycle">{{item.cycle}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="goods-more">
+        <text>查看更多</text>
+        <image
+          class="goods-more-arrow"
+          src="/assets/index/right-arrow.svg"
+          mode="aspectFit"
+        />
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
 <custom-tabbar currentTab="index" />

@@ -4,20 +4,20 @@ Component({
   },
   methods: {
     onTabTap(e) {
-      const tab = e?.currentTarget?.dataset?.tab
+      const tab = e?.currentTarget?.dataset?.tab;
       const pathMap = {
         index: '/pages/index/index',
         task: '/pages/task/index',
         message: '/pages/message/index',
-      }
+      };
       if (!tab || tab === this.props.currentTab) {
-        return
+        return;
       }
-      const targetPath = pathMap[tab]
+      const targetPath = pathMap[tab];
       if (!targetPath) {
-        return
+        return;
       }
-      my.redirectTo({ url: targetPath })
+      my.redirectTo({ url: targetPath });
     },
   },
-})
+});
