@@ -1,5 +1,235 @@
-<view class="page">
-  <view class="title">消息</view>
-  <view class="desc">这里是消息页面。</view>
+<view class="message-page">
+
+  <view class="tab-row">
+    <view
+      class="tab-item {{activeTab === 'activity' ? 'tab-item-active' : ''}}"
+      data-tab="activity"
+      onTap="switchTab"
+    >
+      <text class="tab-label">活动公告</text>
+    </view>
+    <view
+      class="tab-item {{activeTab === 'order' ? 'tab-item-active' : ''}}"
+      data-tab="order"
+      onTap="switchTab"
+    >
+      <text class="tab-label">订单消息</text>
+      <image
+        a:if="{{orderList.length > 0}}"
+        class="tab-dot"
+        src="/assets/message/red-dot.svg"
+        mode="aspectFit"
+      />
+    </view>
+  </view>
+
+  <view class="action-row">
+    <view
+      class="action-btn"
+      onTap="openDeleteDialog"
+    >
+      <image
+        class="action-icon"
+        src="/assets/message/delete.svg"
+        mode="aspectFit"
+      />
+      <text class="action-text">删除已读</text>
+    </view>
+    <view class="action-divider"></view>
+    <view
+      class="action-btn"
+      onTap="markAllRead"
+    >
+      <image
+        class="action-icon"
+        src="/assets/message/clear.svg"
+        mode="aspectFit"
+      />
+      <text class="action-text">一键已读</text>
+    </view>
+  </view>
+
+  <view
+    class="list"
+    a:if="{{activeTab === 'activity'}}"
+  >
+    <block a:if="{{activityList.length}}">
+      <view
+        class="list-item"
+        a:for="{{activityList}}"
+        a:for-item="item"
+        a:key="id"
+        data-id="{{item.id}}"
+        onTap="openActivityDetail"
+      >
+        <view class="list-icon-wrap">
+          <image
+            class="list-icon"
+            src="/assets/message/bell.svg"
+            mode="aspectFit"
+          />
+          <image
+            a:if="{{item.unread}}"
+            class="list-dot"
+            src="/assets/message/red-dot.svg"
+            mode="aspectFit"
+          />
+        </view>
+        <view class="list-main">
+          <view class="list-head">
+            <text class="list-title">{{item.title}}</text>
+            <text class="list-time">{{item.time}}</text>
+          </view>
+          <text class="list-content">{{item.content}}</text>
+        </view>
+      </view>
+      <view class="list-footer">没有更多了</view>
+    </block>
+    <view
+      a:else
+      class="empty-wrap"
+    >
+      <image
+        class="empty-icon"
+        src="/assets/message/none-message.png"
+        mode="aspectFit"
+      />
+      <text class="empty-text">暂无消息</text>
+    </view>
+  </view>
+
+  <view
+    class="list"
+    a:if="{{activeTab === 'order'}}"
+  >
+    <block a:if="{{orderList.length}}">
+      <view
+        class="list-item"
+        a:for="{{orderList}}"
+        a:for-item="item"
+        a:key="id"
+      >
+        <view class="list-icon-wrap">
+          <image
+            class="list-icon"
+            src="/assets/message/money.svg"
+            mode="aspectFit"
+          />
+          <image
+            a:if="{{item.unread}}"
+            class="list-dot"
+            src="/assets/message/red-dot.svg"
+            mode="aspectFit"
+          />
+        </view>
+        <view class="list-main">
+          <view class="list-head">
+            <text class="list-title">{{item.title}}</text>
+            <text class="list-time">{{item.time}}</text>
+          </view>
+          <text class="list-content">{{item.content}}</text>
+        </view>
+      </view>
+      <view class="list-footer">没有更多了</view>
+    </block>
+    <view
+      a:else
+      class="empty-wrap"
+    >
+      <image
+        class="empty-icon"
+        src="/assets/message/none-message.png"
+        mode="aspectFit"
+      />
+      <text class="empty-text">暂无消息</text>
+    </view>
+  </view>
+
+  <view
+    a:if="{{showDeleteDialog}}"
+    class="dialog-mask"
+    catchTap="closeDeleteDialog"
+  >
+    <view
+      class="dialog"
+      catchTap="noop"
+    >
+      <view class="dialog-title">是否确认要删除已读通知</view>
+      <view class="dialog-actions">
+        <view
+          class="dialog-btn dialog-btn-confirm"
+          onTap="confirmDeleteRead"
+        >
+          确认删除
+        </view>
+        <view
+          class="dialog-btn dialog-btn-cancel"
+          onTap="closeDeleteDialog"
+        >
+          取消
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view
+    a:if="{{showActivityDetailDialog}}"
+    class="detail-mask"
+    catchTap="closeActivityDetail"
+  >
+    <view
+      class="detail-panel"
+      catchTap="noop"
+    >
+      <view class="detail-title">{{currentActivityTitle}}</view>
+      <view class="detail-content">{{currentActivityDetailContent}}</view>
+      <image
+        class="detail-banner"
+        src="/assets/message/detail.png"
+        mode="aspectFill"
+      />
+      <view
+        a:if="{{currentActivitySubTitle}}"
+        class="detail-subtitle"
+      >
+        {{currentActivitySubTitle}}
+      </view>
+      <view
+        a:if="{{currentActivitySubContent}}"
+        class="detail-subcontent"
+      >
+        {{currentActivitySubContent}}
+      </view>
+      <view class="detail-actions">
+        <view
+          class="detail-btn detail-btn-delete"
+          onTap="deleteCurrentActivity"
+        >
+          删除
+        </view>
+        <view
+          class="detail-btn detail-btn-confirm"
+          onTap="confirmActivityDetail"
+        >
+          确定
+        </view>
+      </view>
+    </view>
+  </view>
+  <view
+    a:if="{{showRewardToast}}"
+    class="reward-toast"
+  >
+    <image
+      class="reward-icon"
+      src="/assets/message/money.svg"
+      mode="aspectFit"
+    />
+    <view class="reward-main">
+      <text class="reward-title">恭喜获得{{rewardValue}}个租币!</text>
+      <text class="reward-subtitle">阅读消息</text>
+    </view>
+    <text class="reward-value">+{{rewardValue}}</text>
+  </view>
 </view>
 <custom-tabbar currentTab="message" />
