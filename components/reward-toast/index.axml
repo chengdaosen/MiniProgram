@@ -1,0 +1,24 @@
+<!--
+  奖励提示条结构说明
+  - show 为 false 时整体不渲染，避免占位和点击穿透问题
+  - 左侧 icon + 中间文案 + 右侧数值 的三段式布局
+  - 文案由外部页面传入
+-->
+<view
+  a:if="{{show}}"
+  class="reward-toast"
+>
+  <!-- 左侧奖励图标 -->
+  <image
+    class="reward-icon"
+    src="{{icon}}"
+    mode="aspectFit"
+  />
+  <!-- 中间主副标题文案 -->
+  <view class="reward-main">
+    <text class="reward-title">{{title}}</text>
+    <text class="reward-subtitle">{{subtitle}}</text>
+  </view>
+  <!-- 右侧奖励值，统一加号前缀 -->
+  <text class="reward-value">+{{rewardValue}}</text>
+</view>

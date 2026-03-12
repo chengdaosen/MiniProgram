@@ -1,5 +1,104 @@
-<view class="page">
-  <view class="title">任务</view>
-  <view class="desc">这里是任务页面。</view>
+<view class="task-page">
+  <view class="task-header">
+    <text class="header-tip">天天走路领红包，一起瓜分现金奖池！</text>
+    <view class="header-rule">
+      <image
+        class="header-rule-icon"
+        src="/assets/shop/system-help.svg"
+        mode="aspectFit"
+      />
+      <text>活动规则</text>
+    </view>
+  </view>
+
+  <view
+    a:if="{{showTaskDialog}}"
+    class="task-dialog-mask"
+    catchTap="closeTaskDialog"
+  >
+    <scroll-view
+      class="task-dialog-panel"
+      scroll-y
+      catchTap="noop"
+    >
+      <view class="task-banner">
+        <view class="banner-title">天天做任务赚翻租币</view>
+        <view class="banner-subtitle">
+          已获得 <text class="banner-coin-value">{{totalCoins}}</text> 个租币，租币可兑换商品
+        </view>
+        <view
+          class="banner-close"
+          onTap="closeTaskDialog"
+        >
+          x
+        </view>
+      </view>
+
+      <view class="task-section">
+        <view class="section-title">新人专享</view>
+        <view
+          class="task-item"
+          a:for="{{newbieTasks}}"
+          a:for-item="item"
+          a:key="id"
+        >
+          <view class="task-left">
+            <view class="task-icon-wrap">
+              <image
+                class="task-icon"
+                src="{{item.icon}}"
+                mode="aspectFit"
+              />
+            </view>
+            <text class="task-name">{{item.title}}</text>
+          </view>
+          <view
+            class="task-btn {{item.done ? 'task-btn-done' : 'task-btn-reward'}}"
+            data-id="{{item.id}}"
+            onTap="onTaskAction"
+          >
+            {{item.done ? '已领取' : '+' + item.reward + '租币'}}
+          </view>
+        </view>
+      </view>
+
+      <view class="task-section">
+        <view class="section-title">每天逛逛</view>
+        <view
+          class="task-item"
+          a:for="{{dailyTasks}}"
+          a:for-item="item"
+          a:key="id"
+        >
+          <view class="task-left">
+            <view class="task-icon-wrap">
+              <image
+                class="task-icon"
+                src="{{item.icon}}"
+                mode="aspectFit"
+              />
+            </view>
+            <text class="task-name">{{item.title}}</text>
+          </view>
+          <view
+            class="task-btn {{item.done ? 'task-btn-done' : 'task-btn-reward'}}"
+            data-id="{{item.id}}"
+            onTap="onTaskAction"
+          >
+            {{item.done ? '已领取' : '+' + item.reward + '租币'}}
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <reward-toast
+    show="{{showRewardToast}}"
+    icon="/assets/message/money.svg"
+    title="恭喜获得{{rewardValue}}个租币!"
+    subtitle="{{rewardSource}}"
+    rewardValue="{{rewardValue}}"
+  />
 </view>
+
 <custom-tabbar currentTab="task" />

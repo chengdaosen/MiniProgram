@@ -1,6 +1,7 @@
 {
   "defaultTitle": "消息",
   "usingComponents": {
-    "custom-tabbar": "/components/custom-tabbar/index"
+    "custom-tabbar": "/components/custom-tabbar/index",
+    "reward-toast": "/components/reward-toast/index"
   }
 }

@@ -216,20 +216,12 @@
       </view>
     </view>
   </view>
-  <view
-    a:if="{{showRewardToast}}"
-    class="reward-toast"
-  >
-    <image
-      class="reward-icon"
-      src="/assets/message/money.svg"
-      mode="aspectFit"
-    />
-    <view class="reward-main">
-      <text class="reward-title">恭喜获得{{rewardValue}}个租币!</text>
-      <text class="reward-subtitle">阅读消息</text>
-    </view>
-    <text class="reward-value">+{{rewardValue}}</text>
-  </view>
+  <reward-toast
+    show="{{showRewardToast}}"
+    icon="/assets/message/money.svg"
+    title="恭喜获得{{rewardValue}}个租币!"
+    subtitle="阅读消息"
+    rewardValue="{{rewardValue}}"
+  />
 </view>
 <custom-tabbar currentTab="message" />

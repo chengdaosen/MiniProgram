@@ -128,6 +128,8 @@
             a:for-item="item"
             a:for-index="index"
             a:key="index"
+            data-index="{{index}}"
+            onTap="onServiceTap"
           >
             <image
               class="service-icon"
