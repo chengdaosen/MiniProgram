@@ -39,6 +39,7 @@ const SERVICE_LIST: ServiceItem[] = [
     name: '租币商城',
     desc: '租币当钱花',
     icon: '/assets/index/pic_shop.svg',
+    targetUrl: '/pages/shop/index',
   },
   {
     name: '租币任务',

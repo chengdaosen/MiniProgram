@@ -1,0 +1,126 @@
+<scroll-view
+  class="shop-page"
+  scroll-y
+>
+  <view class="shop-hero">
+    <view class="hero-head">
+      <view class="hero-user">
+        <image
+          class="hero-avatar"
+          src="/assets/shop/avatar.png"
+          mode="aspectFill"
+        />
+        <text class="hero-name">租币当钱花</text>
+      </view>
+      <view class="hero-rule">
+        <image
+          class="hero-rule-icon"
+          src="/assets/shop/system-help.svg"
+          mode="aspectFit"
+        />
+        <text>规则</text>
+      </view>
+    </view>
+
+    <view class="hero-balance">
+      <text class="balance-label">可用租币</text>
+      <text class="balance-value">{{availableCoins}}</text>
+    </view>
+
+    <view class="hero-action">
+      <image
+        class="hero-action-image"
+        src="/assets/shop/make-money.svg"
+        mode="aspectFit"
+      />
+    </view>
+
+    <view class="promo-list">
+      <view
+        class="promo-item"
+        a:for="{{promoList}}"
+        a:for-item="item"
+        a:key="id"
+      >
+        <text class="promo-title">{{item.title}}</text>
+        <text class="promo-subtitle">{{item.subtitle}}</text>
+        <view class="promo-reward">{{item.reward}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="middle" />
+  <view class="shop-main">
+    <view class="section-head">
+      <view class="section-title-wrap">
+        <text class="section-title">兑换商城</text>
+        <image
+          class="section-help"
+          src="/assets/shop/system-help.svg"
+          mode="aspectFit"
+        />
+      </view>
+      <view class="record-link">
+        <text>兑换记录</text>
+        <image
+          class="record-arrow"
+          src="/assets/shop/right-arrow.svg"
+          mode="aspectFit"
+        />
+      </view>
+    </view>
+
+    <scroll-view
+      class="filter-scroll"
+      scroll-x
+    >
+      <view class="filter-list">
+        <view
+          class="filter-item {{activeFilterId === item.id ? 'filter-item-active' : ''}}"
+          a:for="{{filterList}}"
+          a:for-item="item"
+          a:key="id"
+          data-filter-id="{{item.id}}"
+          onTap="onFilterTap"
+        >
+          {{item.label}}
+        </view>
+      </view>
+    </scroll-view>
+
+    <view class="goods-list">
+      <view
+        class="goods-item"
+        a:for="{{goodsList}}"
+        a:for-item="item"
+        a:key="id"
+      >
+        <view class="goods-image-wrap">
+          <image
+            class="goods-image"
+            src="{{item.image}}"
+            mode="aspectFit"
+          />
+          <view class="goods-tag">包邮</view>
+        </view>
+        <view class="goods-title">{{item.title}}</view>
+        <view class="goods-price-row">
+          <text class="goods-coin">{{item.coinText}}</text>
+          <text class="goods-extra">{{item.extraPrice}}</text>
+        </view>
+        <view class="goods-meta">
+          <text class="goods-origin">{{item.originPrice}}</text>
+          <text class="goods-sold">{{item.soldText}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="more-btn">
+      <text>赚取更多租币</text>
+      <image
+        class="more-btn-arrow"
+        src="/assets/shop/bottom-right-arrow.svg"
+        mode="aspectFit"
+      />
+    </view>
+  </view>
+</scroll-view>

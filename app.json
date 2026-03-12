@@ -1,5 +1,10 @@
 {
-  "pages": ["pages/index/index", "pages/task/index", "pages/message/index"],
+  "pages": [
+    "pages/index/index",
+    "pages/shop/index",
+    "pages/task/index",
+    "pages/message/index"
+  ],
   "lazyCodeLoading": "renderedComponents",
   "window": {
     "defaultTitle": "My App"
