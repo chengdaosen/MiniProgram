@@ -4,18 +4,9 @@
     "noEmit": true,
     "esModuleInterop": true,
     "noImplicitThis": true,
-    "types": [
-      "@mini-types/alipay"
-    ],
-    "lib": [
-      "ES2015",
-      "DOM"
-    ]
+    "types": ["@mini-types/alipay"],
+    "lib": ["ES2015", "DOM"]
   },
-  "include": [
-    "**/*"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["**/*"],
+  "exclude": ["node_modules"]
 }

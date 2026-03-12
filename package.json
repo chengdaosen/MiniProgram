@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "format": "prettier --write \"**/*.{ts,js,json,axml,acss,less,css,md,yml,yaml}\"",
+    "format:check": "prettier --check \"**/*.{ts,js,json,axml,acss,less,css,md,yml,yaml}\""
+  },
   "devDependencies": {
     "@mini-types/alipay": "^3",
     "@typescript-eslint/eslint-plugin": "^8.57.0",
