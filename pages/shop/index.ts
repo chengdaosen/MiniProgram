@@ -41,19 +41,19 @@ const SHOP_PROMO_LIST: ShopPromoItem[] = [
     id: 'lottery',
     title: '天天抽大奖',
     subtitle: '免费得iPhone X',
-    reward: 'G0>',
+    reward: 'GO>',
   },
   {
     id: 'guard',
     title: '“租”力防疫',
     subtitle: '宅家不无聊',
-    reward: 'G0>',
+    reward: 'GO>',
   },
   {
     id: 'guide',
     title: '走路领租币',
     subtitle: '宅家不无聊',
-    reward: 'G0>',
+    reward: 'GO>',
   },
 ];
 

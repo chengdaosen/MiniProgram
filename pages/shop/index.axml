@@ -30,23 +30,29 @@
     <view class="hero-action">
       <image
         class="hero-action-image"
-        src="/assets/shop/make-money.svg"
+        src="/assets/shop/make-money.png"
         mode="aspectFit"
       />
     </view>
 
-    <view class="promo-list">
-      <view
-        class="promo-item"
-        a:for="{{promoList}}"
-        a:for-item="item"
-        a:key="id"
-      >
-        <text class="promo-title">{{item.title}}</text>
-        <text class="promo-subtitle">{{item.subtitle}}</text>
-        <view class="promo-reward">{{item.reward}}</view>
+    <scroll-view
+      class="promo-scroll"
+      scroll-x
+      show-scrollbar="{{false}}"
+    >
+      <view class="promo-list">
+        <view
+          class="promo-item"
+          a:for="{{promoList}}"
+          a:for-item="item"
+          a:key="id"
+        >
+          <text class="promo-title">{{item.title}}</text>
+          <text class="promo-subtitle">{{item.subtitle}}</text>
+          <view class="promo-reward">{{item.reward}}</view>
+        </view>
       </view>
-    </view>
+    </scroll-view>
   </view>
   <view class="middle" />
   <view class="shop-main">
